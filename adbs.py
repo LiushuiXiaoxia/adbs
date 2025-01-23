@@ -79,10 +79,11 @@ def main():
         return
     
     # Handle specific operations (install, uninstall) or forward all other commands
-    if command == "install" and len(sys.argv) == 3:
-        apk_path = sys.argv[2]
-        execute_adb_command(devices, ["install", apk_path])
-    elif command == "uninstall" and len(sys.argv) == 3:
+    if command == "install":
+        #apk_path = sys.argv[2]
+        #execute_adb_command(devices, ["install", apk_path])
+        execute_adb_command(devices, sys.argv[1:])
+    elif command == "uninstall" and len(sys.argv) >= 3:
         package_name = sys.argv[2]
         execute_adb_command(devices, ["uninstall", package_name])
     else:
