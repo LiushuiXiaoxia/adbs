@@ -18,6 +18,10 @@ Then load as a plugin in your `.zshrc`
 plugins+=(adbs)
 ```
 
+# Requirements
+
+You need to have `adb` installed. Or you have `adb` in your PATH.
+
 
 # Usages
 
