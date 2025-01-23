@@ -84,9 +84,6 @@ def main():
         #apk_path = sys.argv[2]
         #execute_adb_command(devices, ["install", apk_path])
         execute_adb_command(devices, sys.argv[1:])
-    elif command == "uninstall" and len(sys.argv) >= 3:
-        package_name = sys.argv[2]
-        execute_adb_command(devices, ["uninstall", package_name])
     else:
         # Forward other commands to all devices
         execute_adb_command(devices, sys.argv[1:])
