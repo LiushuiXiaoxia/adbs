@@ -24,8 +24,9 @@ def execute_adb_command(devices, command):
         return
     
     for device in devices:
-        print(f"Executing on device: {device}")
-        result = subprocess.run(["adb", "-s", device] + command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        cmds = ["adb", "-s", device] + command
+        print(f"Executing on device: {device}, cmd: {cmds}")
+        result = subprocess.run(cmds, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         print(f"Output from {device}:\n{result.stdout}")
         if result.stderr:
             print(f"Error from {device}:\n{result.stderr}")
