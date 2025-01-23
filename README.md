@@ -28,6 +28,18 @@ You need to have `adb` installed. Or you have `adb` in your PATH.
 For example, if you want to install an app on all your devices:
 
 ```shell
+# adb devices
+adb devices
+List of devices attached
+10.23.255.111:30476	device
+10.23.255.111:37024	device
+
+# adbs devices
+adbs devices
+Connected devices:
+  10.23.255.111:30476
+  10.23.255.111:37024
+
 # adb install
 adb install -r -t app/build/outputs/apk/debug/app-debug.apk
 adb: more than one device/emulator
